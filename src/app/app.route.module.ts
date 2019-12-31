@@ -4,16 +4,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { InitialLoadPageComponent } from './initial-load-page/initial-load-page.component';
 
 
 const routes: Routes = [
   {
     path : '',
-    component : LoginComponent
+    component : InitialLoadPageComponent
   },
   {
-    path : 'test',
-    component : AppComponent
+    path : 'login',
+    component : LoginComponent
   }
 ]
 
