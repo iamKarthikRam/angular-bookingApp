@@ -3,3 +3,16 @@
 .backgroundCol {
   background-color: azure;
 }
+
+.default-mar-pad {
+  padding : 10px; 
+}
+
+.default-fullPage {
+  height: 500px;
+  width: 1250px;
+}
+
+.default-mar {
+  margin:10px 10px;
+}
