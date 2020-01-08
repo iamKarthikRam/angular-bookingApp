@@ -6,8 +6,8 @@
           <h1>Booking App</h1>
           <p>This is a booking app for practice</p>
         </div>
-        <div class="col-xs-5 col-md-5 shadow mt-5 ml-5">
-          <form class="align-items-center justify-content-center">
+        <div class="col-xs-5 col-md-5 shadow mt-5 ml-5 form-background">
+          <form *ngIf="isLoginForm" class="align-items-center justify-content-center">
             <div class="form-group default-mar-pad">
               <label for="username">User Name</label>
               <input class="form-control" type="text" id="username">
@@ -19,10 +19,35 @@
             <div class="default-mar text-center">
               <button class = "btn btn-primary" routerLink="/login">Login</button>
             </div>
+            <div class="default-mar text-center">
+              <p>If you are new user <a href="#" (click)="loadSignupForm()">Sign Up!</a> </p>
+            </div>
+          </form>
+          <form *ngIf="!isLoginForm" #signupform="ngForm" (ngSubmit)="onSignupSubmit(signupform)" class="align-items-center justify-content-center">
+            <h4 class="default-mar">Please enter below Details for Sign up!</h4>
+            <div>
+              <div class="form-group default-mar">
+              <label for="username">User Name</label>
+              <input class="form-control" type="text" id="username" ngModal>
+              </div>
+            </div>
+            <div class="form-group default-mar">
+              <label for="password">Password</label>
+              <input class ="form-control" type="password" id="password" ngModal>
+            </div>
+            <div class="form-group default-mar">
+              <label for="confPassword">Confirm Password</label>
+              <input class ="form-control" type="password" id="confPassword" ngModal>
+            </div>
+            <div class="default-mar text-center">
+              <button type="submit" class = "btn btn-outline-primary default-mar">Sign Up</button>
+              <button type="button" class = "btn btn-outline-danger default-mar" (click)="isLoginForm=!isLoginForm">Cancel</button>
+            </div>
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
