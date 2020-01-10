@@ -13,12 +13,9 @@ export class InitialLoadPageComponent implements OnInit{
     this.isLoginForm = true;
   }
 
-  loadSignupForm(){
-    this.isLoginForm = false;
+  toggleForm(event:boolean){
+    this.isLoginForm = event;
   }
 
-  onSignupSubmit(signupForm:any){
-    console.log(signupForm);
-  }
-
+  
 }
