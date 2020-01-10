@@ -10,6 +10,8 @@ import { InitialLoadPageComponent } from './initial-load-page/initial-load-page.
 import { HeaderComponent } from './header/header.component';
 import { SignUpComponent } from './signup-form/signup-form.component';
 
+import { AuthService } from './auth/auth.service';
+
 
 
 @NgModule({
@@ -19,6 +21,7 @@ import { SignUpComponent } from './signup-form/signup-form.component';
                   InitialLoadPageComponent, 
                   HeaderComponent,
                   SignUpComponent],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers:    [AuthService]
 })
 export class AppModule { }

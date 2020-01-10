@@ -2,17 +2,17 @@
   <h4 class="default-mar">Please enter below Details for Sign up!</h4>
   <div>
     <div class="form-group default-mar">
-    <label for="username">User Name</label>
-    <input class="form-control" type="text" id="username" name="username" ngModel>
+    <label for="email">E-mail</label>
+    <input class="form-control" type="text" id="email" name="email" ngModel email required>
     </div>
   </div>
   <div class="form-group default-mar">
     <label for="password">Password</label>
-    <input class ="form-control" type="password" id="password" name="password" ngModel>
+    <input class ="form-control" type="password" id="password" name="password" ngModel required>
   </div>
   <div class="form-group default-mar">
     <label for="confPassword">Confirm Password</label>
-    <input class ="form-control" type="password" id="confPassword" name="confPassword" ngModel>
+    <input class ="form-control" type="password" id="confPassword" name="confPassword" ngModel required>
   </div>
   <div class="default-mar text-center">
     <button type="submit" class = "btn btn-outline-primary default-mar">Sign Up</button>
