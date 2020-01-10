@@ -1,4 +1,4 @@
-import { Component, OnDestroy, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { UserDetails } from '../common/model.user.model';
 import { Subscription } from 'rxjs';
@@ -7,15 +7,20 @@ import { Subscription } from 'rxjs';
   selector: 'app-signup',
   templateUrl : './signup-form.component.html'
 })
-export class SignUpComponent implements OnDestroy
+export class SignUpComponent implements OnInit,OnDestroy
 {
   
-  @Output('loginForm') cancelSignup = new EventEmitter<boolean>();
+  @Output('loginForm') loadLoginForm = new EventEmitter<boolean>();
 
-  signUpSubsription : Subscription;
+  signupSubsription : Subscription;
+  signupStatus : string;
 
   constructor(private authService: AuthService){
 
+  }
+
+  ngOnInit(){
+    this.signupStatus = 'initial'
   }
   
   onSignupSubmit(signupForm:any){
@@ -30,25 +35,25 @@ export class SignUpComponent implements OnDestroy
       returnSecureToken : true
       }
 
-      this.signUpSubsription = this.authService.signup(userDetails).subscribe((response)=>{
+      this.signupSubsription = this.authService.signup(userDetails).subscribe((response)=>{
         console.log('User Created Successfully : ',response);
+        this.signupStatus = 'success';
       },(error)=>{
         console.log('Error occured : ',error ); 
+        this.signupStatus = 'failure';
       });
 
     } else {
       console.log('Confiramtion password not matching with passowrd');
     }
-
-    
   }
 
-  onCancel(){
-    this.cancelSignup.emit(true);
+  loadLogin(){
+    this.loadLoginForm.emit(true);
   }
 
   ngOnDestroy(){
-    this.signUpSubsription.unsubscribe();
+    this.signupSubsription.unsubscribe();
   }
 
 }
