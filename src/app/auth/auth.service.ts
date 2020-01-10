@@ -11,9 +11,12 @@ export class AuthService{
   }
 
   signup(userDetails: UserDetails): Observable<UserDetails>{
-    return this.httpClient.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCFs_d8UYuhB2g-PPUbmJxXKstBJMiWRMM',
+    return this.httpClient.post<UserDetails>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCFs_d8UYuhB2g-PPUbmJxXKstBJMiWRMM',
                     userDetails);
-    //return true;
+  }
+
+  login(userDetails: UserDetails):Observable<UserDetails>{
+    return this.httpClient.post<UserDetails>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCFs_d8UYuhB2g-PPUbmJxXKstBJMiWRMM',userDetails);
   }
 
 }

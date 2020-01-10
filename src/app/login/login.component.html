@@ -1,14 +1,14 @@
-<form  class="align-items-center justify-content-center">
+<form  #loginform="ngForm" (ngSubmit)="loginFormSubmit(loginform)" class="align-items-center justify-content-center">
   <div class="form-group default-mar-pad">
     <label for="email">User Name</label>
-    <input class="form-control" type="text" id="email">
+    <input class="form-control" type="text" id="email" name="email">
   </div>
   <div class="form-group default-mar-pad">
     <label for="password">Password</label>
-    <input class ="form-control" type="password" id="password">
+    <input class ="form-control" type="password" id="password" name="password">
   </div>
   <div class="default-mar text-center">
-    <button class = "btn btn-primary" routerLink="/login">Login</button>
+    <button type="submit" class = "btn btn-primary">Login</button>
   </div>
   <div class="default-mar text-center">
     <p>If you are new user <a href="#" (click)="loadSignupForm()">Sign Up!</a> </p>

@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { InitialLoadPageComponent } from './initial-load-page/initial-load-page.component';
 import { HeaderComponent } from './header/header.component';
 import { SignUpComponent } from './signup-form/signup-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { AuthService } from './auth/auth.service';
 
@@ -20,7 +21,8 @@ import { AuthService } from './auth/auth.service';
                   LoginComponent,
                   InitialLoadPageComponent, 
                   HeaderComponent,
-                  SignUpComponent],
+                  SignUpComponent,
+                  DashboardComponent],
   bootstrap:    [ AppComponent ],
   providers:    [AuthService]
 })

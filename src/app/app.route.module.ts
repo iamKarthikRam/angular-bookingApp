@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { InitialLoadPageComponent } from './initial-load-page/initial-load-page.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -13,8 +13,8 @@ const routes: Routes = [
     component : InitialLoadPageComponent
   },
   {
-    path : 'login',
-    component : LoginComponent
+    path : 'dashboard',
+    component : DashboardComponent
   }
 ]
 
