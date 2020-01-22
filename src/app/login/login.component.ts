@@ -22,12 +22,12 @@ export class LoginComponent {
   loginFormSubmit(loginForm:any) {
     let email = loginForm.value.email;
     let password = loginForm.value.password;
-    console.log('loginForm: '+loginForm);
     let userDetail : UserDetail = {
       email : email,
       password : password,
       returnSecureToken : true
     }
+    console.log('loginForm',loginForm);
     this.authService.login(userDetail).subscribe((response)=>{
       this.router.navigate(['/dashboard'],{relativeTo:this.activatedRoute});
     },(error)=>{

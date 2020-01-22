@@ -8,4 +8,7 @@ import { appTitle } from '../common/app.constants'
 export class HeaderComponent {
   appTitle = appTitle;
 
+  onLogout(){
+    
+  }
 }
